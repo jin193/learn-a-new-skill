@@ -1,0 +1,17 @@
+textarea.question-answer {
+	font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans", sans-serif;
+}
+
+
+.feedback {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f5f9ff;
+  border: 1px solid #d6e7ff;
+  color: #0b1220;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

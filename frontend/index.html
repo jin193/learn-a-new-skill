@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>首页</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
+</head>
+
+<body>
+  <nav class="sidebar">
+    <div class="logo">
+      <h1>AI辅助技能学习系统</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active"><i class="fas fa-home"></i> <span>首页</span></a></li>
+      <li><a href="pages/outline.html"><i class="fas fa-project-diagram"></i> <span>创建</span></a></li>
+      <li><a href="pages/preview.html"><i class="fas fa-book"></i> <span>预习</span></a></li>
+      <li><a href="pages/learning.html"><i class="fas fa-graduation-cap"></i> <span>学习</span></a></li>
+      <li><a href="pages/practice.html"><i class="fas fa-tasks"></i> <span>练习</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <div class="content-box">
+
+      <div id="emptyState" class="emptyState hidden">
+        <h2>尚未创建学习大纲</h2>
+        <p class="text-muted">请先创建学习大纲，然后再开始学习</p><br>
+
+        <section>
+          <button onclick="window.location.href='pages/outline.html'" class="btn btn-primary">去创建</button>
+        </section>
+      </div>
+
+      <div id="dashboard" class="dashboard hidden">
+        <section>
+          <h2>当前学习进度</h2>
+          <p id="currentSkill" class="progress-info"></p>
+          <div id="progressInfo" class="progress-info"></div>
+
+          <div class="step-list">
+            <button onclick="window.location.href='pages/preview.html'" class="card-link" data-step="1">
+              <h3><i class="fas fa-book"></i> 预习</h3>
+              <p class="small">针对知识点，生成一份简明概述，提前阅读，建立初步认知</p>
+            </button>
+
+            <button onclick="window.location.href='pages/learning.html'" class="card-link" data-step="2">
+              <h3><i class="fas fa-graduation-cap"></i> 学习</h3>
+              <p class="small">根据学习框架，提出引导性问题并进行评审</p>
+            </button>
+
+            <button onclick="window.location.href='pages/practice.html'" class="card-link" data-step="3">
+              <h3><i class="fas fa-tasks"></i> 练习</h3>
+              <p class="small">根据核心要点生成5道选择题，并提炼出具体、薄弱点</p>
+            </button>
+          </div>
+        </section>
+
+        <section >
+          <div id="indexDiagram" class="mindmap"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="https://unpkg.com/gojs/release/go.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/index.js"></script>
+</body>
+</html>

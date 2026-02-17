@@ -1,0 +1,62 @@
+div.content-box {
+  max-width: 1000px;
+}
+
+div#indexDiagram.mindmap {
+  width: 100%;
+  height: 620px;
+  border: 1px solid #e6eaf0;
+  border-radius: 12px;
+  background: #fff;
+}
+
+div.dashboard {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+}
+
+div#progressInfo.progress-info {
+  margin-bottom: 18px;
+  color:#0b1220;
+  white-space: pre-wrap;
+}
+
+div.step-list {
+  display: grid;
+  gap: 14px;
+}
+
+button.card-link {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e6eaf0;
+  text-decoration: none;
+  color: #0b1220;
+  transition: all 160ms ease;
+  text-align: left;
+  cursor: pointer;
+}
+
+button.card-link:hover {
+  border-color: #8ec6ff;
+  box-shadow: 0 6px 20px rgba(42, 134, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+button.card-link h3 {
+  margin: 0 0 10px;
+}
+
+button.card-link h3.active {
+  color: #1855b5;
+}
+
+@media (max-width: 900px) {
+  div.dashboard {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>创建学习大纲</title>
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/outline.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <nav class="sidebar">
+    <div class="logo">
+      <h1>AI辅助技能学习系统</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html"><i class="fas fa-home"></i> <span>首页</span></a></li>
+      <li><a href="outline.html" class="active"><i class="fas fa-project-diagram"></i> <span>创建</span></a></li>
+      <li><a href="preview.html"><i class="fas fa-book"></i> <span>预习</span></a></li>
+      <li><a href="learning.html"><i class="fas fa-graduation-cap"></i> <span>学习</span></a></li>
+      <li><a href="practice.html"><i class="fas fa-tasks"></i> <span>练习</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <div class="content-box">
+      <h1><i class="fas fa-project-diagram"></i> 创建学习大纲</h1>
+      <p>输入要学习的知识技能，系统将自动分解为阶段和知识点两层结构，并生成思维导图</p>
+
+      <section>
+        <label for="skillInput" class="bold">请输入知识技能名称</label>
+        <input id="skillInput" type="text" placeholder="例如：摄影、演讲、绘画..." />
+        <button id="generateBtn" class="btn">生成大纲</button>
+        <span id="generateStatus" class="text-muted"></span>
+      </section>
+
+
+      <section id="result" class="section hidden">
+        <div id="diagramDiv" class="mindmap"></div><br>
+        <button id="saveBtn" class="btn btn-primary">确定并保存</button>
+        <span id="saveStatus" class="text-muted"></span><br><br>
+        <p>确定新的学习大纲后，将会清除所有已有学习进度</p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/gojs/release/go.js"></script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/outline.js"></script>
+</body>
+</html>

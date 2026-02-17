@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>练习诊断</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/practice.css" />
+</head>
+<body>
+  <nav class="sidebar">
+    <div class="logo">
+      <h1>AI辅助技能学习系统</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html"><i class="fas fa-home"></i> <span>首页</span></a></li>
+      <li><a href="outline.html"><i class="fas fa-project-diagram"></i> <span>创建</span></a></li>
+      <li><a href="preview.html"><i class="fas fa-book"></i> <span>预习</span></a></li>
+      <li><a href="learning.html"><i class="fas fa-graduation-cap"></i> <span>学习</span></a></li>
+      <li><a href="practice.html" class="active"><i class="fas fa-tasks"></i> <span>练习</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <div class="content-box">
+      <h1><i class="fas fa-tasks"></i> 练习诊断</h1>
+      <p>根据核心要点生成5道选择题，并提炼出具体、薄弱点</p>
+
+      <section>
+        <button id="generateBtn" class="btn">生成练习题</button>
+        <span id="generateStatus" class="text-muted"></span>
+      </section>
+
+      <section id="result" class="hidden">
+        <div id="questionList"></div><br>
+        <button id="submitBtn" class="btn">提交答案</button>
+        <span id="submitStatus" class="text-muted"></span>
+      </section>
+
+      <section id="result2" class="section hidden">
+        <h2>薄弱点</h2>
+        <div id="weaknessBox"></div><br>
+        <button id="finishBtn" class="btn btn-primary">确定并完成学习</button>
+      </section>
+    </div>
+  </main>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/practice.js"></script>
+</body>
+</html>
