@@ -20,7 +20,7 @@
     {
       "question": "...",
       "options": ["A. ...", "B. ...", "C. ...", "D. ..."],
-      "answer": "A"
+      "answer": "A",
       "explanation": "..."
     }
   ]

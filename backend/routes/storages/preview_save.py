@@ -18,7 +18,7 @@ def _wrap_html(template, html_content, title):
 
 def handle(data, ctx):
     context = data.get("context")
-    asept_index = context.get("aspect_index", 1)
+    aspect_index = context.get("aspect_index", 1)
     topic_index = context.get("topic_index", 1)
     html_content = data.get("html", "")
 
@@ -38,10 +38,10 @@ def handle(data, ctx):
     preview_dir.mkdir(parents=True, exist_ok=True)
 
     template = _load_template(html_dir)
-    title = f"预习： {asept_index}.{topic_index} - 知径"
+    title = f"预习： {aspect_index}.{topic_index} - 知径"
     wrapped_html = _wrap_html(template, html_content, title)
 
-    preview_path = preview_dir / f"{asept_index}.{topic_index}.html"
+    preview_path = preview_dir / f"{aspect_index}.{topic_index}.html"
     preview_path.write_text(wrapped_html, encoding="utf-8")
 
     return {"ok": True}

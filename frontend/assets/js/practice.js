@@ -45,7 +45,6 @@ function renderQuestions(questions, showAnswers) {
       const options = question.options;
       const normalizedOptions = options.map((opt, optIndex) => normalizeOption(opt, optIndex));
       const selected = showAnswers ? document.querySelector(`input[name="q${index}"]:checked`)?.value || "" : "";
-      console.log("Normalized Options:", selected);
       const answer = (question.answer || "").toString().trim().toUpperCase();
       const explanation = question.explanation || "";
 

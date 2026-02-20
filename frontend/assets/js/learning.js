@@ -35,7 +35,10 @@ function renderQuestions(questions) {
 function collectAnswers() {
   return currentQuestions.map((question, index) => {
     const input = document.querySelector(`textarea[question-index="${index}"]`);
-    return {question,nswer: input ? input.value.trim() : "",};
+    return {
+      "question": question,
+      "answer": input ? input.value.trim() : "",
+    };
   });
 }
 
@@ -84,7 +87,7 @@ submitBtn.addEventListener("click", async () => {
   const aqs = collectAnswers();
   try {
     const data = await postJson("/api/review", {
-      aqs: JSON.stringify(aqs, null, 2),
+      aqs: aqs,
     });
     if(data.ok) {
       const feedbacks = data.result.guiding_feedbacks;

@@ -117,14 +117,11 @@ class RequestHandler(BaseHTTPRequestHandler):
             "/api/preview/save": handle_preview_save,
 
             "/api/learning": handle_learning,
+            "/api/review": handle_review,
 
             "/api/practice": handle_practice,
-
-            "/api/weakness_save": handle_weakness_save,
-
-            "/api/review": handle_review,
-            
             "/api/check": handle_check,
+            "/api/weakness_save": handle_weakness_save,
         }
 
         handler = routes.get(parsed.path)
