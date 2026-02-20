@@ -23,7 +23,7 @@ function renderQuestions(questions) {
       return `
         <section class="section">
           <p class="question-text">${index + 1}. ${escapeHtml(question || "")}</p>
-          <textarea question-index="${index}" placeholder="请输入你的回答..."></textarea>
+          <textarea spellcheck="false" question-index="${index}" placeholder="请输入你的回答..."></textarea>
           <div class="hidden feedback" feedback-index="${index}"></div>
         </section>
       `;

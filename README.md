@@ -1,4 +1,4 @@
-# learn a new skill
+# 知径
 
 ## 运行方式
 

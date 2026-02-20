@@ -38,7 +38,7 @@ def handle(data, ctx):
     preview_dir.mkdir(parents=True, exist_ok=True)
 
     template = _load_template(html_dir)
-    title = f"预习： {asept_index}.{topic_index}"
+    title = f"预习： {asept_index}.{topic_index} - 知径"
     wrapped_html = _wrap_html(template, html_content, title)
 
     preview_path = preview_dir / f"{asept_index}.{topic_index}.html"

@@ -79,26 +79,15 @@ class RequestHandler(BaseHTTPRequestHandler):
             if not file_path.exists() or file_path.is_dir():
                 _json_response(self, 404, {"error": "File not found"})
                 return
-                
-            ext = file_path.suffix.lower()
-            content_type = CONTENT_TYPES.get(ext, "application/octet-stream")
-            data = file_path.read_bytes()
-            
-            self.send_response(200)
-            self.send_header("Content-Type", content_type)
-            self.send_header("Content-Length", str(len(data)))
-            self.end_headers()
-            self.wfile.write(data)
-            return
+        else:
+            file_path = (FRONTEND_DIR / target_path.lstrip("/")).resolve()
+            if not str(file_path).startswith(str(FRONTEND_DIR.resolve())):
+                _json_response(self, 403, {"error": "Forbidden"})
+                return
 
-        file_path = (FRONTEND_DIR / target_path.lstrip("/")).resolve()
-        if not str(file_path).startswith(str(FRONTEND_DIR.resolve())):
-            _json_response(self, 403, {"error": "Forbidden"})
-            return
-
-        if not file_path.exists() or file_path.is_dir():
-            _json_response(self, 404, {"error": "File not found"})
-            return
+            if not file_path.exists() or file_path.is_dir():
+                _json_response(self, 404, {"error": "File not found"})
+                return
 
         ext = file_path.suffix.lower()
         content_type = CONTENT_TYPES.get(ext, "application/octet-stream")
